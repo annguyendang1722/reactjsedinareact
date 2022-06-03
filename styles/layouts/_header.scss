@@ -1,7 +1,71 @@
 .headermobile {
-	@media(min-width: 991px) {
-		display: none;
+	padding: 18px 40px !important;
+
+	@media(min-width:991px) {
+		display: none !important;
 	}
+
+	&__right {
+		display: flex;
+		align-items: center;
+	}
+
+	&__changbg {
+		margin-right: 10px;
+		margin-top: 5px;
+
+		svg {
+			width: 35px;
+			padding: 5px;
+			height: 35px;
+			border-radius: 100%;
+			cursor: pointer;
+		}
+
+	}
+
+	.open {
+		width: 45px;
+		height: 45px;
+		position: relative;
+		border-radius: 50%;
+		padding: 0;
+		background: #000;
+		border: none;
+		margin-left: auto;
+		color: white;
+		cursor: pointer;
+
+		span {
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			width: 25px;
+			height: 2px;
+			margin: auto;
+			background: #fff;
+			color: #fff;
+			transition: .3s;
+
+			&:first-child {
+				top: -15px;
+			}
+
+			&:nth-child(2) {
+				top: 1px;
+			}
+
+			&:last-child {
+				top: auto;
+				bottom: 13px;
+			}
+
+		}
+
+	}
+
 }
 
 .leftsidebar {
@@ -17,6 +81,19 @@
 	transition: all .5s ease;
 	z-index: 98;
 
+	.closemenu {
+		position: absolute;
+		top: 0;
+		right: 25px;
+		font-size: 36px;
+		margin-left: 50px;
+
+		@media(min-width:991px) {
+			display: none;
+		}
+
+	}
+
 	@media(max-width:991px) {
 		width: 0px;
 	}
@@ -28,9 +105,13 @@
 		float: left;
 		border-bottom: 1px solid #cbd3d9;
 		display: flex;
-		padding: 40px;
+		padding: 30px 30px;
 		align-items: center;
 		justify-content: space-between;
+
+		@media(max-width:991px) {
+			padding: 20px 40px;
+		}
 
 		&--white {
 			display: block;
@@ -45,6 +126,13 @@
 	&__changbg {
 		cursor: pointer;
 
+		&#leftsidebar__changbg {
+			@media(max-width:991px) {
+				opacity: 0;
+			}
+
+		}
+
 		&--white {
 			display: block;
 		}
@@ -55,8 +143,8 @@
 
 		svg {
 			z-index: 99;
-			width: 50px;
-			height: 50px;
+			width: 30px;
+			height: 30px;
 			padding: 10px 10px;
 			border-radius: 50%;
 			display: flex;
@@ -68,7 +156,7 @@
 	}
 
 	&__menu {
-		padding: 60px 40px;
+		padding: 60px 30px;
 		clear: both;
 
 		.clickmenu {
@@ -147,28 +235,21 @@
 
 }
 
-.rightsidebar {
-	@media(min-width:991px) {
-		margin-left: 320px;
-	}
-
-}
-
-
-.leftsidebar .closemenu {
-	position: absolute;
-	top: 0;
-	right: 25px;
-	font-size: 36px;
-	margin-left: 50px;
-
-	@media(min-width:991px) {
-		display: none;
-	}
-
-}
-
 .allsite {
+	.headermobile {
+		background: #34495e;
+
+		.open {
+			background: white;
+
+			span {
+				background: black;
+			}
+
+		}
+
+	}
+
 	h3, h1, h2, h5 {
 		color: white;
 	}
@@ -219,7 +300,6 @@
 		}
 
 		&__menu {
-			padding: 60px 40px;
 			clear: both;
 
 			.clickmenu {
@@ -404,6 +484,13 @@
 			border: 5px solid #11131a;
 		}
 
+	}
+
+}
+
+.rightsidebar {
+	@media(min-width:991px) {
+		margin-left: 320px;
 	}
 
 }

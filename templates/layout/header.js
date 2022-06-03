@@ -36,9 +36,7 @@ export default function Header() {
   return (  
 
   <div>  
-        <div class="headermobile">
-          <span class="open" id="openmenu">&#9776; open</span>
-        </div>
+       
 
         <div id="mySidenav" className="leftsidebar">
           <a href="javascript:void(0)" className="closemenu" id="closemenu">×</a>

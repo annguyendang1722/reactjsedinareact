@@ -2,6 +2,10 @@
 	background-color: #f5f8fc;
 	padding: 100px 0px;
 	text-align: center;
+	@media(max-width: 991px) 
+	{
+		padding-top: 130px;
+	}
 
 	&__container {
 		max-width: 390px;

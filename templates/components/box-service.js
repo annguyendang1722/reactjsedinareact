@@ -8,7 +8,7 @@ function ShowService({ databoxservice = [] }) {
   return (
     
     <div className="service" id="service">
-      <div class="container">
+      <div className="container">
         <div className="service__title">
           <h2> {title}</h2>
           <p> {subtitle}</p>

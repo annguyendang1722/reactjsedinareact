@@ -1,4 +1,5 @@
 import React, {memo} from "react";
+//import Zoom from 'react-reveal/Zoom';
 
 function ShowHome({ databoxhome = [] }) {
 
@@ -7,6 +8,9 @@ function ShowHome({ databoxhome = [] }) {
   return (
     
     <div className="person" id="home">
+      {/* <Zoom>
+  <p>Markup that will be revealed on scroll</p>
+</Zoom> */}
       <div className="person__container">
           <div className="person__img">
             <img src={img} />

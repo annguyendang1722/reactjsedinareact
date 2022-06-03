@@ -12,8 +12,6 @@ import ShowContact from "../templates/components/box-contact";
 
 
 import { BoxHome , BoxAbout,BoxPortfolio,BoxTestimonial, BoxService,BoxBlog, BoxContact} from "../api-data/components/edinareact";
-//import { BoxHome , BoxAbout,BoxPortfolio, BoxService, BoxContact} from "../api-data/components/edinareact";
-
 
 
 
@@ -30,11 +28,9 @@ return (
   
         <ShowHome databoxhome = {BoxHome}/>
         <ShowAbout databoxabout = {BoxAbout}/>
+        <ShowService databoxservice = {BoxService}/>
         <ShowPortfolio databoxportfolio = {BoxPortfolio}/>
         <ShowTestimonial databoxtestimonial = {BoxTestimonial}/>
-
-        <ShowService databoxservice = {BoxService}/>
-
         <ShowBlog databoxblog = {BoxBlog}/>
         <ShowContact databoxcontact = {BoxContact}/>
 

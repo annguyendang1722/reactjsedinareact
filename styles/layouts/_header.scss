@@ -1,63 +1,3 @@
-/*
-.header {
-  &__inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  &__logo {
-    width: 200px;
-  }
-
-  &__content {
-    display: flex;
-    align-items: center;
-  }
-}
-
-.main-menu {
-  > ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: flex-end;
-  }
-
-  li {
-    position: relative;
-
-    ul {
-      top: 50px;
-      width: 250px;
-      background-color: #fff;
-      list-style: none;
-      padding: 10px 0;
-      position: absolute;
-      border: 2px solid #abd5da;
-      display: none;
-    }
-
-    a, span {
-      font-size: 16px;
-      padding: 10px 15px;
-      color: $primary-color;
-      display: inline-block;
-      width: 100%;
-    }
-
-    &:hover {
-      > ul {
-        display: block;
-      }
-    }
-  }
-}
-*/ 
-
 .headermobile {
 	@media(min-width: 991px) {
 		display: none;
@@ -349,8 +289,70 @@
 
 	}
 
-	.person, .contactform, .service {
+	.person, .contactform, .service, .testimonials {
 		background-color: #191c26;
+	}
+
+	.testimonials {
+		&__inner {
+			background-color: #11131a;
+		}
+
+		&__slider {
+			.slick-active {
+				button {
+					&:after {
+						background-color: white !important;
+					}
+
+					&:before {
+						border: 2px solid white !important;
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+	.portfolio {
+		.slick-active {
+			button {
+				&:after {
+					background-color: white !important;
+				}
+
+				&:before {
+					border: 2px solid white !important;
+				}
+
+			}
+
+		}
+
+	}
+
+	.blog {
+		.slick-active {
+			button {
+				&:after {
+					background-color: white !important;
+				}
+
+				&:before {
+					border: 2px solid white !important;
+				}
+
+			}
+
+		}
+
+	}
+
+	.about, .portfolio, .blog {
+		background-color: #11131a;
 	}
 
 	.person {
@@ -375,8 +377,6 @@
 	}
 
 	.about {
-		background-color: #11131a;
-
 		&__label {
 			color: white;
 		}

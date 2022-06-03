@@ -16,6 +16,10 @@
 
 		}
 
+		.slick-dots {
+			bottom: -50px;
+		}
+
 		.slick-list {
 			padding: 0px 0px !important;
 			overflow: hidden;
@@ -118,13 +122,30 @@
 
 	}
 
+	&__inner {
+		background-color: #fff;
+		padding: 50px 50px 60px;
+		border-radius: 6px;
+	}
+
 	&__text {
 		margin-bottom: 60px;
+	}
+
+	&__info {
+		padding-left: 30px;
+
+		h3 {
+			margin-bottom: 0px;
+		}
+
 	}
 
 	&__img {
 		display: flex;
 		position: relative;
+		align-items: center;
+		margin-bottom: 40px;
 
 		&:before {
 			content: url(/images/quote.svg);
@@ -133,6 +154,12 @@
 			right: 0;
 			height: 100px;/*    background-image: url();*/
 			width: 100px;
+
+			@media(max-width:991px) {
+				right: -35px;
+				transform: scale(0.7);
+			}
+
 		}
 
 		img {

@@ -56,14 +56,15 @@ function ShowTestimonial({ databoxtestimonial = [] }) {
             <Slider {...settings}>    
                     {listimg.map((imgslider,index) =>(
                       <div   key={index} className="testimonials__item">
+                        <div   key={index} className="testimonials__inner">
                         <div className="testimonials__img">
                           <img src={imgslider.img} alt="1"/>
                           <div className="testimonials__info">
-                            <h3>{imgslider.name}</h3><span>{imgslider.job}</span>
+                            <h3>{imgslider.name}</h3><p>{imgslider.job}</p>
                           </div>
                         </div>
                         <p>{imgslider.description}</p>
-                      </div>
+                      </div></div>
                     ))}
             </Slider>
           </div>

@@ -1,0 +1,61 @@
+.person {
+	background-color: #f5f8fc;
+	padding: 100px 0px;
+	text-align: center;
+
+	&__container {
+		max-width: 390px;
+		width: 100%;
+		margin: 0 auto;
+	}
+
+	&__img {
+		line-height: 0;
+
+		img {
+			border-radius: 100%;
+		}
+
+		margin-bottom: 15px;
+	}
+
+	&__text {
+		p {
+			margin-bottom: 32px;
+		}
+
+	}
+
+	&__social {
+		list-style: none;
+		display: flex;
+		justify-content: center;
+		margin-bottom: 25px;
+
+		li {
+			padding: 0px 15px;
+			border-right: 1px solid #e5e5e5;
+
+			&:last-child {
+				border-right: unset;
+			}
+
+		}
+
+		img {
+			filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(67deg) grayscale(95%) contrast(80%);
+		}
+
+	}
+
+	&__download {
+		a {
+			color: #1a1a1a;
+			border-radius: 30px;
+			margin-top: 0px;
+			background-color: #f5f8fc;
+		}
+
+	}
+
+}

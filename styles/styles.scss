@@ -1,0 +1,43 @@
+//Include styles for Modern Browsers
+@charset 'UTF-8';
+
+// Reset
+@import "base/reset";
+
+// Variables
+@import "base/variables";
+
+//Helpers classes
+@import "base/helpers";
+@import "base/functions";
+@import "base/mixins";
+
+// Base Style
+@import "base/fonts";
+@import "base/icons";
+@import "base/grid";
+@import "base/extends";
+@import "base/typography";
+@import "base/form";
+@import "base/table";
+
+
+
+// Layouts
+@import "layouts/layout";
+@import "layouts/navigation";
+@import "layouts/header";
+@import "layouts/footer";
+
+//Components
+@import "components/banner";
+@import "components/data-farm-about";
+
+
+@import "components/box-home";
+@import "components/box-about";
+@import "components/box-portfolio";
+@import "components/box-testimonial";
+@import "components/box-blog";
+@import "components/box-service";
+@import "components/box-contact";

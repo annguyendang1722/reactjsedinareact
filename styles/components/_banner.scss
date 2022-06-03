@@ -1,0 +1,56 @@
+.banner {
+    &__item {
+        position: relative;
+    }
+
+    &__img {
+        width: 100%;
+
+      img {
+        display: block;
+        width: 100%;
+      }
+    }
+
+    &__content {
+        position: absolute;
+        width: 100%;
+        bottom: 55px;
+    }
+
+    &__title {
+        text-transform: uppercase;
+        font-size: 52px;
+        color: #fff;
+        font-weight: 900;
+        margin-bottom: 0;
+        letter-spacing: 3px;
+    }
+
+    &__subtitle {
+        font-weight: 400;
+        margin-bottom: 30px;
+        text-transform: uppercase;
+        font-size: 52px;
+        color: #fff;
+        letter-spacing: 3px;
+    }
+
+    .slick-next {
+        right: 25px;
+    }
+    .slick-prev {
+        left: 25px;
+    }
+    .slick-prev, .slick-next {
+        z-index: 12;
+        width: 80px;
+        height: 80px;
+    }
+    .slick-prev:before,
+    .slick-next:before {
+        font-size: 22px;
+        color: #fff;
+        transform: translate(-50%, -50%);
+    }
+}

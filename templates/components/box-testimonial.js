@@ -65,19 +65,21 @@ function ShowTestimonial({ databoxtestimonial = [] }) {
           <div>
             <Slider {...settings}>    
                     {listimg.map((imgslider,index) =>(
-                        <Fade left>
+                       
                             <div   key={index} className="testimonials__item">
-                                <div   key={index} className="testimonials__inner">
-                                <div className="testimonials__img">
-                                  <img src={imgslider.img} alt="1"/>
-                                  <div className="testimonials__info">
-                                    <h3>{imgslider.name}</h3><p>{imgslider.job}</p>
+                               <Fade left cascade>
+                                  <div key={index} className="testimonials__inner">
+                                      <div className="testimonials__img">
+                                        <img src={imgslider.img} alt="1"/>
+                                        <div className="testimonials__info">
+                                          <h3>{imgslider.name}</h3><p>{imgslider.job}</p>
+                                        </div>
+                                      </div>
+                                      <p>{imgslider.description}</p>
                                   </div>
-                                </div>
-                                <p>{imgslider.description}</p>
-                              </div>
+                                </Fade>
                             </div>
-                        </Fade>
+                       
                     ))}
             </Slider>
           </div>

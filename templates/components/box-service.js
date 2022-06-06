@@ -14,21 +14,25 @@ function ShowService({ databoxservice = [] }) {
           <h2> {title}</h2>
           <p> {subtitle}</p>
         </div>
+        <Fade left cascade>
         <div className="service__row">
         
             {listicon.map((icon,index) =>(
-                <Fade left>
+              
                   <div key={index} className="service__col">
-                    <div className="service__inner">
-                      <img className="service__img" src={icon.icon} alt={icon.title} />
-                      <h3 className="service__work">  {icon.title}</h3>
-                        { icon.btn && <a href={icon.btn.url} className="service__learn">{icon.btn.name}</a>}
-                    </div>
+                     
+                        <div className="service__inner">
+                          <img className="service__img" src={icon.icon} alt={icon.title} />
+                          <h3 className="service__work">  {icon.title}</h3>
+                            { icon.btn && <a href={icon.btn.url} className="service__learn">{icon.btn.name}</a>}
+                        </div>
+                     
                   </div>
-                  </Fade>
+               
             ))}
 
         </div>
+        </Fade>
       </div>
     </div>
 

@@ -69,13 +69,15 @@ function ShowPortfolio({ databoxportfolio = [] }) {
         <div className="portfolio__slider">
             <Slider {...settings}>
                         {listimg.map((imgslider,index) =>(
-                           <Fade left>
+                        
                           <div key={index} className="portfolio__item">
-                            <div className="portfolio__img">
-                              <img src={imgslider.img} alt="1"/>
-                            </div>
+                              <Fade left cascade>
+                                  <div className="portfolio__img">
+                                    <img src={imgslider.img} alt="1"/>
+                                  </div>
+                              </Fade>
                           </div>
-                          </Fade>
+                         
                         ))}
             </Slider>
         </div>

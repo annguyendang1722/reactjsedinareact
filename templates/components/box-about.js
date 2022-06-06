@@ -12,7 +12,7 @@ function ShowAbout({ databoxabout = [] }) {
       <div className="container">
         <h2 className="about__title">{titlemain}</h2>
         <div className="about__row">
-          <Fade left>
+          <Fade left cascade>
             <div className="about__left">     
               <div className="about__info">
                 <h3>{title}</h3>
@@ -41,7 +41,7 @@ function ShowAbout({ databoxabout = [] }) {
               { btn && <a href={btn.url} className="about__see btn">{btn.name}</a>}
             </div>
           </Fade>
-          <Fade right>
+          <Fade right cascade>
             <div className="about__right">
               <img src={img} alt="About Me"/>
               <div className="about__year">

@@ -94,17 +94,19 @@ function ShowBlog({ databoxblog = [] }) {
             
               <Slider {...settings}>    
                       {listimg.map((imgslider,index) =>(
-                          <Fade left>
+                         
                               <div  key={index} className="blog__item">
+                                 <Fade left cascade>
                                   <div className="blog__img">
                                     <img src={imgslider.img} alt="1"/>
                                   </div>
                                   <div className="blog__text">
                                     <span className="blog__date">{imgslider.date} <a href="#">{imgslider.job}</a></span>
                                     <h3 className="blog__name">{imgslider.name}</h3>
-                                  </div>                 
+                                  </div>     
+                                  </Fade>            
                               </div>
-                          </Fade>
+                         
                       ))}
               </Slider>
           

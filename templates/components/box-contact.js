@@ -13,33 +13,34 @@ function ShowContact({ databoxcontact = [] }) {
           <h2>{title}</h2>
           <p>{subtitle}</p>
         </div>
+        <Fade left cascade>
         <div className="contactform__info">
 
-
-
-         
               {listicon.map((icon,index) =>(
-                 <Fade left>
+               
                   <div key={index}  className="contactform__threecol">
-                      <div className="contactform__inner">
-                        <div className="contactform__icon"><img src={icon.icon} alt={icon.title} /></div>
-                        <div className="contactform__content">
-                          <h3>{icon.title}</h3>
-                          <ul>
-                            <li>{ icon.btn1 && <a href={icon.btn1.url} className="">{icon.btn1.name}</a>}</li>
-                            <li>{ icon.btn2 && <a href={icon.btn2.url} className="">{icon.btn2.name}</a>}</li>
-                          </ul>
-                        </div>
-                      </div>
+                    
+                          <div className="contactform__inner">
+                            <div className="contactform__icon"><img src={icon.icon} alt={icon.title} /></div>
+                            <div className="contactform__content">
+                              <h3>{icon.title}</h3>
+                              <ul>
+                                <li>{ icon.btn1 && <a href={icon.btn1.url} className="">{icon.btn1.name}</a>}</li>
+                                <li>{ icon.btn2 && <a href={icon.btn2.url} className="">{icon.btn2.name}</a>}</li>
+                              </ul>
+                            </div>
+                          </div>
+                   
                   </div>
-                  </Fade>
+               
                 ))}
 
 
 
         </div>
+        </Fade>
         <div className="contactform__formmap">
-        <Fade left>
+        <Fade left cascade>
           <div className="contactform__form">
             <div className="contactform__innerform">
               <div className="contactform__formtitle">
@@ -56,7 +57,7 @@ function ShowContact({ databoxcontact = [] }) {
             </div>
           </div>
           </Fade>
-          <Fade left>
+          <Fade left cascade>
           <div className="contactform__map">
             <iframe className="embed-responsive-item" title="my location"
               src={map}></iframe>

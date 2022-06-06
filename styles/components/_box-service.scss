@@ -42,6 +42,15 @@
 
 	}
 
+	&__open
+	{
+		.service__modal 
+		{
+			    opacity: 1;
+    visibility: visible;background-color: rgba(0, 0, 0, 0.5);
+		}
+	}
+
 	&__row {
 		display: flex;
 		flex-wrap: wrap;
@@ -117,5 +126,100 @@
 		}
 
 	}
+
+
+
+
+
+	&__modals {
+		.modal {
+			position: fixed;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.5);
+			opacity: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			visibility: hidden;
+			transform: scale(1.1);
+			transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+		}
+
+		.show-modal-m {
+			opacity: 1;
+			visibility: visible;
+			transform: scale(1);
+			transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+		}
+
+	}
+
+	&__modal {
+		position: fixed;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		visibility: hidden;
+		transform: scale(1.1);
+		transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+	}
+
+	&__close {
+		float: right;
+		width: 30px;
+		line-height: 30px;
+		height: 30px;
+		font-size: 20px;
+		text-align: center;
+		color: white;
+		cursor: pointer;
+		border-radius: 100%;
+		background-color: transparent;
+		border: 2px solid white;
+		z-index: 999999;
+		position: absolute;
+		right: -45px;
+		top: -45px;
+		transform: scale(2);
+
+		@media(max-width:991px) {
+			transform: scale(1);
+			right: -15px;
+			top: -35px;
+		}
+
+	}
+
+	&__innermodal {
+		align-self: center;
+		background-color: white;
+		padding: 50px 50px;
+		max-width: 865px;
+		border-radius: 0.5rem;
+		position: relative;
+		width: 100%;
+
+		@media(max-width:991px) {
+			max-width: 90%;
+		}
+
+	}
+
+
+
+
+
+
+
+
+
 
 }

@@ -1,6 +1,6 @@
 import React, {memo,useEffect} from "react";
 
-import Reveal from 'react-reveal/Zoom';
+import Fade from "react-reveal/Fade";
 
 function ShowHome({ databoxhome = [] }) {
 
@@ -29,7 +29,7 @@ function ShowHome({ databoxhome = [] }) {
         this.txt = fullTxt.substring(0, this.txt.length + 1);
       }
     
-      this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+      this.el.innerHTML = '<span className="wrap">'+this.txt+'</span>';
     
       var that = this;
       var delta = 300 - Math.random() * 100;
@@ -73,14 +73,14 @@ function ShowHome({ databoxhome = [] }) {
   return (
     <div className="person" id="home">
       <div className="person__container">
-          <Reveal effect="fadeUp"> 
+          <Fade bottom>
                 <div className="person__img">
                   <img src={img} />
                 </div>
                 <div className="person__text">
                   <h5> {name} </h5>
-                  <h1  class="nerdy-pen__text">    
-                  <span class="txt-rotate" data-period="200" data-rotate='["Web Developer", "Graphic Designer"]'>{work}</span> </h1>
+                  <h1  className="nerdy-pen__text">    
+                  <span className="txt-rotate" data-period="200" data-rotate='["Web Developer", "Graphic Designer"]'>{work}</span> </h1>
                   <p>{subtitle} </p>
                 </div>
                   <ul className="person__social">
@@ -95,7 +95,7 @@ function ShowHome({ databoxhome = [] }) {
                 <div className="person__download">
                   {btn && <a href={btn.url} className="btn">{btn.name}</a>}
                 </div>
-          </Reveal>
+          </Fade>
       </div>
     </div>
 

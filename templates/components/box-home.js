@@ -70,15 +70,7 @@ function ShowHome({ databoxhome = [] }) {
 
   }, []);
 
-
-
-
-
-
-
-  
   return (
-  
     <div className="person" id="home">
       <div className="person__container">
           <Reveal effect="fadeUp"> 

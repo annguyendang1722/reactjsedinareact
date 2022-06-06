@@ -2,6 +2,7 @@ import React, {memo} from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Fade from 'react-reveal/Fade';
 
 function ShowTestimonial({ databoxtestimonial = [] }) {
 
@@ -27,12 +28,21 @@ function ShowTestimonial({ databoxtestimonial = [] }) {
     }
     },
     {
-    breakpoint: 767,
-    settings: {
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    }
-    },
+      breakpoint: 991,
+      settings: {
+      slidesToShow: 2,
+      slidesToScroll: 2,
+      }
+      },
+
+      {
+      breakpoint: 767,
+      settings: {
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      dots: true,
+      }
+      },
     {
     breakpoint: 480,
     settings: {
@@ -55,16 +65,19 @@ function ShowTestimonial({ databoxtestimonial = [] }) {
           <div>
             <Slider {...settings}>    
                     {listimg.map((imgslider,index) =>(
-                      <div   key={index} className="testimonials__item">
-                        <div   key={index} className="testimonials__inner">
-                        <div className="testimonials__img">
-                          <img src={imgslider.img} alt="1"/>
-                          <div className="testimonials__info">
-                            <h3>{imgslider.name}</h3><p>{imgslider.job}</p>
-                          </div>
-                        </div>
-                        <p>{imgslider.description}</p>
-                      </div></div>
+                        <Fade left>
+                            <div   key={index} className="testimonials__item">
+                                <div   key={index} className="testimonials__inner">
+                                <div className="testimonials__img">
+                                  <img src={imgslider.img} alt="1"/>
+                                  <div className="testimonials__info">
+                                    <h3>{imgslider.name}</h3><p>{imgslider.job}</p>
+                                  </div>
+                                </div>
+                                <p>{imgslider.description}</p>
+                              </div>
+                            </div>
+                        </Fade>
                     ))}
             </Slider>
           </div>

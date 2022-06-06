@@ -1,17 +1,16 @@
 import React, {memo} from "react";
-//import Zoom from 'react-reveal/Zoom';
+
+import Reveal from "react-reveal/Zoom";
 
 function ShowHome({ databoxhome = [] }) {
 
   let {img,name,work,subtitle,listsocialicon,btn } = databoxhome
   
   return (
-    
+  
     <div className="person" id="home">
-      {/* <Zoom>
-  <p>Markup that will be revealed on scroll</p>
-</Zoom> */}
       <div className="person__container">
+      <Reveal effect="fadeUp"> 
           <div className="person__img">
             <img src={img} />
           </div>
@@ -32,9 +31,10 @@ function ShowHome({ databoxhome = [] }) {
           <div className="person__download">
             {btn && <a href={btn.url} className="btn">{btn.name}</a>}
           </div>
+          </Reveal>
       </div>
-    </div>
-
+      </div>
+  
 
   );
 }

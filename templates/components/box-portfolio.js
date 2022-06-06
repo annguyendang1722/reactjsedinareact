@@ -2,6 +2,7 @@ import React, {memo} from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Fade from 'react-reveal/Fade';
 
 function ShowPortfolio({ databoxportfolio = [] }) {
 
@@ -28,13 +29,21 @@ function ShowPortfolio({ databoxportfolio = [] }) {
         }
       },
       {
+        breakpoint: 991,
+        settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        }
+        },
+  
+        {
         breakpoint: 600,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          dots: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: true,
         }
-      },
+        },
       {
         breakpoint: 480,
         settings: {
@@ -58,16 +67,17 @@ function ShowPortfolio({ databoxportfolio = [] }) {
         </div>
 
         <div className="portfolio__slider">
-        <Slider {...settings}>
-         
+            <Slider {...settings}>
                         {listimg.map((imgslider,index) =>(
+                           <Fade left>
                           <div key={index} className="portfolio__item">
                             <div className="portfolio__img">
                               <img src={imgslider.img} alt="1"/>
                             </div>
                           </div>
+                          </Fade>
                         ))}
-          </Slider>
+            </Slider>
         </div>
 
       </div>

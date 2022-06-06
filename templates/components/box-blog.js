@@ -2,7 +2,7 @@ import React, {memo,useEffect} from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
+import Fade from 'react-reveal/Fade';
 
 function ShowBlog({ databoxblog = [] }) {
 
@@ -54,13 +54,21 @@ function ShowBlog({ databoxblog = [] }) {
     }
     },
     {
-    breakpoint: 600,
-    settings: {
-    slidesToShow: 2,
-    slidesToScroll: 2,
-    dots: true,
-    }
-    },
+      breakpoint: 991,
+      settings: {
+      slidesToShow: 2,
+      slidesToScroll: 2,
+      }
+      },
+
+      {
+      breakpoint: 600,
+      settings: {
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      dots: true,
+      }
+      },
     {
     breakpoint: 480,
     settings: {
@@ -86,15 +94,17 @@ function ShowBlog({ databoxblog = [] }) {
             
               <Slider {...settings}>    
                       {listimg.map((imgslider,index) =>(
-                          <div  key={index} className="blog__item">
-                              <div className="blog__img">
-                                <img src={imgslider.img} alt="1"/>
+                          <Fade left>
+                              <div  key={index} className="blog__item">
+                                  <div className="blog__img">
+                                    <img src={imgslider.img} alt="1"/>
+                                  </div>
+                                  <div className="blog__text">
+                                    <span className="blog__date">{imgslider.date} <a href="#">{imgslider.job}</a></span>
+                                    <h3 className="blog__name">{imgslider.name}</h3>
+                                  </div>                 
                               </div>
-                              <div className="blog__text">
-                                <span className="blog__date">{imgslider.date} <a href="#">{imgslider.job}</a></span>
-                                <h3 className="blog__name">{imgslider.name}</h3>
-                              </div>                 
-                          </div>
+                          </Fade>
                       ))}
               </Slider>
           

@@ -1,4 +1,5 @@
 import React, {memo} from "react";
+import Fade from 'react-reveal/Fade';
 
 function ShowContact({ databoxcontact = [] }) {
 
@@ -18,6 +19,7 @@ function ShowContact({ databoxcontact = [] }) {
 
          
               {listicon.map((icon,index) =>(
+                 <Fade left>
                   <div key={index}  className="contactform__threecol">
                       <div className="contactform__inner">
                         <div className="contactform__icon"><img src={icon.icon} alt={icon.title} /></div>
@@ -30,12 +32,14 @@ function ShowContact({ databoxcontact = [] }) {
                         </div>
                       </div>
                   </div>
+                  </Fade>
                 ))}
 
 
 
         </div>
         <div className="contactform__formmap">
+        <Fade left>
           <div className="contactform__form">
             <div className="contactform__innerform">
               <div className="contactform__formtitle">
@@ -51,10 +55,13 @@ function ShowContact({ databoxcontact = [] }) {
               </form>
             </div>
           </div>
+          </Fade>
+          <Fade left>
           <div className="contactform__map">
             <iframe className="embed-responsive-item" title="my location"
               src={map}></iframe>
           </div>
+          </Fade>
         </div>
       </div>
     </div>

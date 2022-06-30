@@ -1,0 +1,68 @@
+{
+  "uuid": "ed1c4eca-a4e5-4cf6-abf3-81cc2f0916cd",
+  "lastMigration": 20,
+  "name": "Datanew",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 3002,
+  "hostname": "0.0.0.0",
+  "routes": [
+    {
+      "uuid": "a162e7c0-ef5a-4a6a-8763-19dd2a6d534c",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "",
+      "responses": [
+        {
+          "uuid": "9866393a-6b1c-41e6-9787-e60c6436ff03",
+          "body": "{    \n        img : \"http://edinareact.ibthemespro.com/img/hero/2.jpg\",\n        name: \"Hello, I'm Rokers Nelson\",\n        work: \"Web Developer\",\n        subtitle: \"I'm a Freelancer Front-end React Developer based In USA, over 6 years of professional experience.\",\n        listsocialicon: [\n            {\n                icon:'images/facebook.png',\n                link:\"https://www.facebook.com/\",\n            },\n            {\n                icon:'images/twitter.png',\n                link:\"https://twitter.com/\",\n            },\n            {\n                icon:'images/instagram.png',\n                link:\"https://www.instagram.com/\",\n            },\n            {\n                icon:'images/dribbble.png',\n                link:\"https://dribbble.com/\",\n            },\n            {\n                icon:'images/linkedin.png',\n                link:\"https://www.linkedin.com/feed/\",\n            },\n        ],\n        btn: {\n            name: \"Download CV\",\n            url: \"http://edinareact.ibthemespro.com/img/cv.jpg\",\n        },       \n    \n};",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ]
+}

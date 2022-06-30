@@ -1,17 +1,25 @@
-import React, {memo,useEffect} from "react";
+import React, { memo, useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Fade from 'react-reveal/Fade';
+import Link from 'next/link';
+import useSWR from 'swr'
 
-function ShowBlog({ databoxblog = [] }) {
+function ShowBlog(props) {
 
+  const [DataBoxBlog, setDataBoxBlog] = useState([])
 
   useEffect(() => {
 
 
 
-
+    async function getDataBoxBlog() {
+      const res = await fetch('https://raw.githubusercontent.com/annguyendang1722/createjson/master/BoxBlog.json')
+      const posts = await res.json()
+      setDataBoxBlog(posts)
+    }
+    getDataBoxBlog()
 
     const triggers = document.getElementsByClassName('blog__item');
     const triggerArray = Array.from(triggers).entries();
@@ -31,8 +39,6 @@ function ShowBlog({ databoxblog = [] }) {
 
 
 
-
-  let { title,subtitle,listimg } = databoxblog
   const settings = {
     dots: false,
     infinite: true,
@@ -87,13 +93,13 @@ function ShowBlog({ databoxblog = [] }) {
     <div className="blog" id="blog">
       <div className="container">
         <div className="blog__text">
-          <h2>{title}</h2>
-          <p>{subtitle}</p>
+          <h2>Testimonial</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ipsum sit nibh amet egestas tellus.</p>
         </div>
           <div className="blog__slider">
             
               <Slider {...settings}>    
-                      {listimg.map((imgslider,index) =>(
+                      {DataBoxBlog.map((imgslider,index) =>(
                          
                               <div  key={index} className="blog__item">
                                  <Fade left cascade>
@@ -103,7 +109,14 @@ function ShowBlog({ databoxblog = [] }) {
                                   <div className="blog__text">
                                     <span className="blog__date">{imgslider.date} <a href="#">{imgslider.job}</a></span>
                                     <h3 className="blog__name">{imgslider.name}</h3>
-                                  </div>     
+                                  </div>    
+
+
+                                  <Link href="/blog/[id]" as={`/blog/${imgslider.id}`}>
+                                    <a>{imgslider.name}</a>
+                                  </Link>
+
+
                                   </Fade>            
                               </div>
                          
@@ -112,7 +125,7 @@ function ShowBlog({ databoxblog = [] }) {
           
           </div>
           <div className="blog__modals">        
-                      {listimg.map((imgslider1,index1) =>(
+                      {DataBoxBlog.map((imgslider1,index1) =>(
                           <div  key={index1} className="modal blog__modal">
                             <div className="blog__innermodal">
                               <span className="blog__close">&times;</span>
@@ -135,4 +148,4 @@ function ShowBlog({ databoxblog = [] }) {
   );
 }
 
-export default memo(ShowBlog)
+export default ShowBlog

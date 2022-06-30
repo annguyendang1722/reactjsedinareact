@@ -1,12 +1,30 @@
-import React, {memo} from "react";
+import React, { memo, useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Fade from 'react-reveal/Fade';
+import Head from 'next/head';
+import Fade from "react-reveal/Fade";
+import fetch from 'isomorphic-unfetch'
 
-function ShowPortfolio({ databoxportfolio = [] }) {
 
-  let { title,subtitle,listimg } = databoxportfolio
+
+
+function ShowPortfolio(props) {
+  const [DataBoxPortfolio, setDataBoxPortfolio] = useState([])
+
+
+  useEffect(() => {
+
+    async function getDataBoxPortfolio() {
+      const res = await fetch('https://62a200f4cc8c0118ef5b0812.mockapi.io/listimgportfolio')
+      const posts = await res.json()
+      setDataBoxPortfolio(posts)
+    }
+    getDataBoxPortfolio()
+  }, []);
+
+
+  // let { title,subtitle,listimg } = databoxportfolio
   const settings = {
     dots: false,
     infinite: true,
@@ -62,13 +80,13 @@ function ShowPortfolio({ databoxportfolio = [] }) {
     <div className="portfolio" id="portfolio">
       <div className="container">
         <div className="portfolio__text">
-          <h2>{title}</h2>
-          <p>{subtitle}</p>
+          <h2>Portfolio</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ipsum sit nibh amet egestas tellus.11</p>
         </div>
 
         <div className="portfolio__slider">
             <Slider {...settings}>
-                        {listimg.map((imgslider,index) =>(
+                        {DataBoxPortfolio.map((imgslider,index) =>(
                         
                           <div key={index} className="portfolio__item">
                               <Fade left cascade>
@@ -90,4 +108,4 @@ function ShowPortfolio({ databoxportfolio = [] }) {
   );
 }
 
-export default memo(ShowPortfolio)
+export default ShowPortfolio

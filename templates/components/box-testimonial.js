@@ -1,12 +1,28 @@
-import React, {memo} from "react";
+import React, { memo, useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Fade from 'react-reveal/Fade';
+import Head from 'next/head';
+import Fade from "react-reveal/Fade";
+import fetch from 'isomorphic-unfetch'
 
-function ShowTestimonial({ databoxtestimonial = [] }) {
+function ShowTestimonial(props) {
 
-  let { title,subtitle,listimg} = databoxtestimonial
+  const [DataBoxTestimonial, setDataBoxTestimonial] = useState([])
+
+  useEffect(() => {
+
+    async function getDataBoxTestimonial() {
+      const res = await fetch('https://raw.githubusercontent.com/annguyendang1722/createjson/master/BoxTestimonial.json')
+      const posts = await res.json()
+      setDataBoxTestimonial(posts)
+    }
+    getDataBoxTestimonial()
+  }, []);
+
+
+
+  
   const settings = {
     dots: true,
     infinite: true,
@@ -58,13 +74,13 @@ function ShowTestimonial({ databoxtestimonial = [] }) {
     <div className="testimonials" id="testimonial">
       <div className="container">
         <div className="testimonials__text">
-          <h2>{title}</h2>
-          <p>{subtitle}</p>
+          <h2>Testimonial</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ipsum sit nibh amet egestas tellus.</p>
         </div>
         <div className="testimonials__slider">
           <div>
             <Slider {...settings}>    
-                    {listimg.map((imgslider,index) =>(
+                    {DataBoxTestimonial.map((imgslider,index) =>(
                        
                             <div   key={index} className="testimonials__item">
                                <Fade left cascade>
@@ -90,4 +106,4 @@ function ShowTestimonial({ databoxtestimonial = [] }) {
   );
 }
 
-export default memo(ShowTestimonial)
+export default ShowTestimonial

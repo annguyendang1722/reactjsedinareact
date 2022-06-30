@@ -1,0 +1,68 @@
+{
+  "uuid": "b9e3b56e-c93d-4ba6-8605-60a4b7ffd892",
+  "lastMigration": 20,
+  "name": "Datanew (copy)",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 3003,
+  "hostname": "0.0.0.0",
+  "routes": [
+    {
+      "uuid": "b786b684-4be0-4419-a15a-756818579527",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "",
+      "responses": [
+        {
+          "uuid": "83d6afdd-f3a8-4cad-939f-937239126540",
+          "body": "{     \n        titlemain:\"About me\",\n\n        title: \"Hi, I'm Rokers Nelson\",\n        subtitle: \"I'm a Freelancer Front-end Developer with over 6 years of experience. I'm from San Francisco. I code and create web elements for amazing people around the world. I like work with new people.\",\n        \n        titleskill: \"What is my skill level?\",\n        subtitleskill: \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ipsum sit nibh amet egestas tellus.\",\n             \n        listskill: [\n            {\n                label:\"React.Js\",\n                width: '95%',\n            },\n            {\n                label:\"Vue.Js\",\n                width: '80%',\n            },\n            {\n                label:\"Photoshop\",\n                width: '90%',\n            },\n            {\n                label:\"Figma\",\n                width: '95%',\n            },\n            {\n                label:\"Illustrator\",\n                width: '80%',\n            },\n            {\n                label:\"WordPress\",\n                width: '90%',\n            },\n        ],\n        btn: {\n            name: \"See more\",\n            url: \"#\",\n        },  \n        img: \"http://edinareact.ibthemespro.com/img/about/2.jpg\", \n        year: \"6+ Years\", \n        experiance: \"Of Experiance\", \n    };",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ]
+}

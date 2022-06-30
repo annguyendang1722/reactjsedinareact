@@ -141,31 +141,34 @@ export const BoxHome = {
         
         title: "Blog",
         subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ipsum sit nibh amet egestas tellus.",      
-
         listimg: [
             {
                 img:"http://edinareact.ibthemespro.com/img/news/1.jpg", 
                 date:'April 07,2021',    
                 job:'Design',
                 name:"Forzo Immobile",
+                id: '1',
             },
             {
                 img:"http://edinareact.ibthemespro.com/img/news/2.jpg",
                 date:'March 25,2021',    
                 job:'Branding',
                 name:"Mosby Lavette",
+                id: '2',
             },
             {
                 img:"http://edinareact.ibthemespro.com/img/news/3.jpg",
                 date:'May 01,2021',    
                 job:'Lifestyle',
                 name:"Jacuba Bamba",
+                id: '3',
             },
             {
                 img:"http://edinareact.ibthemespro.com/img/news/4.jpg",
                 date:'May 01,2021',    
                 job:'Lifestyle',
                 name:"Jacuba Bamba",
+                id: '4',
             },
 
         ],

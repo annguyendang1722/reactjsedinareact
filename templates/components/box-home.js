@@ -1,12 +1,24 @@
-import React, {memo,useEffect} from "react";
-
+import React, {memo,useEffect,useState} from "react";
+import Head from 'next/head';
 import Fade from "react-reveal/Fade";
+import fetch from 'isomorphic-unfetch'
 
-function ShowHome({ databoxhome = [] }) {
 
-  let {img,name,work,subtitle,listsocialicon,btn } = databoxhome
+function ShowHome(props) {
+
+  const [DataBoxHome, setDataBoxHome] = useState([])
 
   useEffect(() => {
+
+    async function getDataBoxHome() {
+      const res = await fetch('https://62a200f4cc8c0118ef5b0812.mockapi.io/listsocialicon')
+      const posts = await res.json()
+      setDataBoxHome(posts)
+    }
+    getDataBoxHome()
+
+
+
 
 
     var TxtRotate = function(el, toRotate, period) {
@@ -75,16 +87,16 @@ function ShowHome({ databoxhome = [] }) {
       <div className="person__container">
           <Fade bottom>
                 <div className="person__img">
-                  <img src={img} />
+                  <img src="http://edinareact.ibthemespro.com/img/hero/2.jpg" />
                 </div>
                 <div className="person__text">
-                  <h5> {name} </h5>
+                  <h5> Hello, I'm Rokers Nelson</h5>
                   <h1  className="nerdy-pen__text">    
-                  <span className="txt-rotate" data-period="200" data-rotate='["Web Developer", "Graphic Designer"]'>{work}</span> </h1>
-                  <p>{subtitle} </p>
-                </div>
+                  <span className="txt-rotate" data-period="200" data-rotate='["Web Developer", "Graphic Designer"]'>Web Developer</span> </h1>
+                  <p> I'm a Freelancer Front-end React Developer based In USA, over 6 years of professional experience. </p>
+                  </div>
                   <ul className="person__social">
-                      {listsocialicon.map((socialicon,index) =>(
+                      {DataBoxHome.map((socialicon,index) =>(
                         <li key={index} >
                         <a href={socialicon.link} target="_blank">
                           <img src={socialicon.icon} />
@@ -93,7 +105,7 @@ function ShowHome({ databoxhome = [] }) {
                             ))}
                   </ul>
                 <div className="person__download">
-                  {btn && <a href={btn.url} className="btn">{btn.name}</a>}
+                  <a href="http://edinareact.ibthemespro.com/img/cv.jpg" className="btn">Download CV</a>
                 </div>
           </Fade>
       </div>
@@ -103,4 +115,4 @@ function ShowHome({ databoxhome = [] }) {
   );
 }
 
-export default memo(ShowHome)
+export default ShowHome

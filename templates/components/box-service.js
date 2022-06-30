@@ -1,11 +1,21 @@
-import React, {memo,useEffect} from "react";
+import React, { memo, useEffect, useState } from "react";
 import Fade from 'react-reveal/Fade';
+import fetch from 'isomorphic-unfetch'
 
-function ShowService({ databoxservice = [] }) {
+function ShowService(props) {
 
-  let { title,subtitle,listicon } = databoxservice
+ const [DataBoxService, setDataBoxService] = useState([])
 
   useEffect(() => {
+
+    async function getDataBoxService() {
+      const res = await fetch('https://raw.githubusercontent.com/annguyendang1722/createjson/master/BoxService.json')
+      const posts = await res.json()
+      setDataBoxService(posts)
+    }
+    getDataBoxService()
+
+
 
     const accordions = document.querySelectorAll('.service__row');
 
@@ -27,19 +37,18 @@ function ShowService({ databoxservice = [] }) {
   }, []);
 
 
-
   return (
     
     <div className="service" id="service">
       <div className="container">
         <div className="service__title">
-          <h2> {title}</h2>
-          <p> {subtitle}</p>
+          <h2> What I Do</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ipsum sit nibh amet egestas tellus.</p>
         </div>
         <Fade left cascade>
         <div className="service__row">
         
-            {listicon.map((icon,index) =>(
+            {DataBoxService.map((icon,index) =>(
               
                   <div key={index} className="service__col">
                      
@@ -82,4 +91,4 @@ function ShowService({ databoxservice = [] }) {
   );
 }
 
-export default memo(ShowService)
+export default ShowService

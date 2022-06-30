@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-import useSWR from 'swr'
+
 import ShowHome from "../templates/components/box-home";
 import ShowAbout from "../templates/components/box-about";
 import ShowPortfolio from "../templates/components/box-portfolio";
@@ -13,14 +13,10 @@ import ShowContact from "../templates/components/box-contact";
 
 import { BoxHome , BoxAbout,BoxPortfolio,BoxTestimonial, BoxService,BoxBlog, BoxContact} from "../api-data/components/edinareact";
 
-const fetcher = (url) => fetch(url).then((res) => res.json())
+
 
 
 export default function Edinareact() {
-   const { data, error } = useSWR('/api/blog', fetcher)
-
-   if (error) return <div>Failed to load</div>
-   if (!data) return <div>Loading...</div>
 return (
 <div className="site">
    <Head>
@@ -35,7 +31,7 @@ return (
         <ShowService databoxservice = {BoxService}/>
         <ShowPortfolio databoxportfolio = {BoxPortfolio}/>
         <ShowTestimonial databoxtestimonial = {BoxTestimonial}/>
-        <ShowBlog databoxblog = {BoxBlog} />
+        <ShowBlog databoxblog = {BoxBlog}/>
         <ShowContact databoxcontact = {BoxContact}/>
 
    </main>

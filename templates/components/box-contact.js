@@ -1,33 +1,22 @@
-import React, { memo, useEffect, useState } from "react";
-import Fade from "react-reveal/Fade";
-import fetch from 'isomorphic-unfetch'
+import React, {memo} from "react";
+import Fade from 'react-reveal/Fade';
 
-function ShowContact(props) {
+function ShowContact({ databoxcontact = [] }) {
 
-  const [DataBoxContact, setDataBoxContact] = useState([])
-
-  useEffect(() => {
-
-    async function getDataBoxContact() {
-      const res = await fetch('https://github.com/annguyendang1722/createjson/blob/master/BoxContact.json')
-      const posts = await res.json()
-      setDataBoxContact(posts)
-    }
-    getDataBoxContact()
-  }, []);
+  let { title,subtitle,listicon,titleform1,titleform2,map } = databoxcontact
 
   return (
     
     <div className="contactform" id="contact">
       <div className="contactform__container container">
         <div className="contactform__title">
-          <h2>Contact</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ipsum sit nibh amet egestas tellus.</p>
+          <h2>{title}</h2>
+          <p>{subtitle}</p>
         </div>
         <Fade left cascade>
         <div className="contactform__info">
 
-              {DataBoxContact.map((icon,index) =>(
+              {listicon.map((icon,index) =>(
                
                   <div key={index}  className="contactform__threecol">
                     
@@ -55,7 +44,7 @@ function ShowContact(props) {
           <div className="contactform__form">
             <div className="contactform__innerform">
               <div className="contactform__formtitle">
-                <p>I'm always open to discussing product<br/><span> design work or partnerships.</span></p>
+                <p>{titleform1}<br/><span> {titleform2}</span></p>
               </div>
               <form>
                 <div className="form-item form-type-textfield"><input name="name" type="text" placeholder="Name *"/></div>
@@ -70,7 +59,8 @@ function ShowContact(props) {
           </Fade>
           <Fade left cascade>
           <div className="contactform__map">
-           <iframe className="embed-responsive-item" title="my location" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3151.840107317064!2d144.955925!3d-37.817214!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb6899234e561db11!2sEnvato!5e0!3m2!1sen!2sin!4v1520156366883"></iframe>
+            <iframe className="embed-responsive-item" title="my location"
+              src={map}></iframe>
           </div>
           </Fade>
         </div>
@@ -80,4 +70,4 @@ function ShowContact(props) {
   );
 }
 
-export default ShowContact
+export default memo(ShowContact)

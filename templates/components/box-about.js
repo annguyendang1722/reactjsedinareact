@@ -1,59 +1,52 @@
-import React, { memo, useEffect, useState } from "react";
-import Head from 'next/head';
-import Fade from "react-reveal/Fade";
-import fetch from 'isomorphic-unfetch'
+import React, { memo } from "react";
+import Fade from 'react-reveal/Fade';
 
-function ShowAbout(props) {
+function ShowAbout({ databoxabout = [] }) {
+
+  let {titlemain, title, subtitle,titleskill ,subtitleskill ,listskill,btn,img,year,experiance } = databoxabout
 
 
-
-  const [DataBoxAbout, setDataBoxAbout] = useState([])
-
-  useEffect(() => {
-
-    async function getDataBoxAbout() {
-      const res = await fetch('https://62a200f4cc8c0118ef5b0812.mockapi.io/listskill')
-      const posts = await res.json()
-      setDataBoxAbout(posts)
-    }
-    getDataBoxAbout()
-  }, []);
   return (
 
     <div className="about" id="about">
       <div className="container">
-        <h2 className="about__title">About me</h2>
+        <h2 className="about__title">{titlemain}</h2>
         <div className="about__row">
           <Fade left cascade>
-            <div className="about__left">
+            <div className="about__left">     
               <div className="about__info">
-                <h3>Hi, I'm Rokers Nelson</h3>
-                <p>I'm a Freelancer Front-end Developer with over 6 years of experience. I'm from San Francisco. I code and create web elements for amazing people around the world. I like work with new people.</p>
+                <h3>{title}</h3>
+                <p>{subtitle}</p>
               </div>
               <div className="about__skill">
-                <h3>What is my skill level?</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ipsum sit nibh amet egestas tellus.</p>
+                <h3>{titleskill}</h3>
+                <p>{subtitleskill}</p>
               </div>
               <div className="about__listprogress">
-
-                {DataBoxAbout.map((skill, index) => (
-                  <div key={index} className="about__progress">
-                    <div className="about__label">{skill.label}</div>
+                  <div className="about__progress">
+                    <div className="about__label">React.Js</div>
                     <div className="about__bg">
-                      <div className="about__bar" style={{ width: skill.width }}></div>
+                      <div className="about__bar" style={{width: "90%"}}></div>
                     </div>
                   </div>
-                ))}
-              </div>
-              <a href="#" className="about__see btn">See more</a>
+                    {listskill.map((skill,index) =>(
+                      <div key={index}  className="about__progress">
+                        <div className="about__label">{skill.label}</div>
+                        <div className="about__bg">
+                          <div className="about__bar" style={{width: skill.width}}></div>
+                        </div>
+                      </div>
+                    ))}
+                </div>           
+              { btn && <a href={btn.url} className="about__see btn">{btn.name}</a>}
             </div>
           </Fade>
           <Fade right cascade>
             <div className="about__right">
-              <img src="http://edinareact.ibthemespro.com/img/about/2.jpg" alt="About Me" />
+              <img src={img} alt="About Me"/>
               <div className="about__year">
-                <h3>6+ Years</h3>
-                <span>Of Experiance</span>
+                <h3>{year}</h3>
+                <span>{experiance}</span>
               </div>
             </div>
           </Fade>
@@ -64,4 +57,4 @@ function ShowAbout(props) {
   );
 }
 
-export default ShowAbout
+export default memo(ShowAbout)
